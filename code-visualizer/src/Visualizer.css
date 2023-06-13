@@ -1,0 +1,68 @@
+#code-box {
+    width: 800px;
+    height: 600px;
+    background-color: #15181d;
+    border-radius: 1rem;
+    /* box-shadow: 0px 0px 10px 0px rgba(15, 15, 19, 0.5); */
+}
+
+/* HEADER */
+
+#header-area {
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#close, #minimize, #maximize {
+    height: 15px;
+    width: 15px;
+    border-radius: 100px;
+    margin-left: 8px;
+}
+
+#close {
+    margin-left: 22px;
+    background-color: #e73a3a;
+}
+
+#minimize {
+    background-color: #e7c73a;
+}
+
+#maximize {
+    background-color: #3ae782;
+}
+
+/* CODE AREA */
+
+#code-container {
+    height: 90%;
+    display: flex;
+    flex-direction: row;
+}
+
+#line-numbers {
+    color: #34383f;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 0 1rem 1rem 1rem;
+}
+
+#text-area {
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    display: flex;
+    text-align: start;
+    margin: 0 1rem 1rem 0;
+    height: 100%;
+    width: 90%;
+}
+
+#code-p {
+    font-size: 1rem;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
