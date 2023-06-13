@@ -1,6 +1,7 @@
 import './Visualizer.css';
 import * as html2canvas from 'html2canvas';
 import { useRef, useState, useEffect } from 'react';
+import Canvas from './Canvas';
 
 function Visualizer() {
 
@@ -31,6 +32,7 @@ function Visualizer() {
     const printCode = () => {
         let i = 0;
         let lines = exampleCode.split(/\n/);
+        setCode("");
         console.log(lines);
         let interval = setInterval(function() {
             console.log(i);
@@ -41,43 +43,47 @@ function Visualizer() {
     }
 
     return (
-        <div>
+        <div id='home'>
+            <Canvas/>
 
-            <div id="code-box" ref={exportRef}>
+            <div id='container'>
 
-                {/* Header area, only used for styling */}
-                <div id="header-area">
-                    <div id="close"></div>
-                    <div id="minimize"></div>
-                    <div id="maximize"></div>
+                <div id="code-box" ref={exportRef}>
+
+                    {/* Header area, only used for styling */}
+                    <div id="header-area">
+                        <div id="close"></div>
+                        <div id="minimize"></div>
+                        <div id="maximize"></div>
+                    </div>
+
+                    {/* Code area, line numbers, code lines */}
+                    <div id="code-container">
+                        <div id="line-numbers">
+                            <p id="code-p">1</p>
+                            <p id="code-p">2</p>
+                            <p id="code-p">3</p>
+                            <p id="code-p">4</p>
+                            <p id="code-p">5</p>
+                            <p id="code-p">6</p>
+                            <p id="code-p">7</p>
+                            <p id="code-p">8</p>
+                            <p id="code-p">9</p>
+                            <p id="code-p">10</p>
+                            <p id="code-p">11</p>
+                            <p id="code-p">12</p>
+                            <p id="code-p">13</p>
+                            <p id="code-p">14</p>
+                        </div>
+                        <div id="text-area">
+                            <p id="code-p">{code}</p>
+                        </div>
+                    </div>
                 </div>
 
-                {/* Code area, line numbers, code lines */}
-                <div id="code-container">
-                    <div id="line-numbers">
-                        <p id="code-p">1</p>
-                        <p id="code-p">2</p>
-                        <p id="code-p">3</p>
-                        <p id="code-p">4</p>
-                        <p id="code-p">5</p>
-                        <p id="code-p">6</p>
-                        <p id="code-p">7</p>
-                        <p id="code-p">8</p>
-                        <p id="code-p">9</p>
-                        <p id="code-p">10</p>
-                        <p id="code-p">11</p>
-                        <p id="code-p">12</p>
-                        <p id="code-p">13</p>
-                        <p id="code-p">14</p>
-                    </div>
-                    <div id="text-area">
-                        <p id="code-p">{code}</p>
-                    </div>
-                </div>
+                <button onClick={() => exportAsImage(exportRef.current, "test")}>Save Image</button>
+                <button onClick={() => printCode()}>Generate</button>
             </div>
-
-            <button onClick={() => exportAsImage(exportRef.current, "test")}>Save Image</button>
-            <button onClick={() => printCode()}>Generate</button>
 
         </div>
     );

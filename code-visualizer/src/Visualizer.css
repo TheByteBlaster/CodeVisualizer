@@ -3,7 +3,7 @@
     height: 600px;
     background-color: #15181d;
     border-radius: 1rem;
-    /* box-shadow: 0px 0px 10px 0px rgba(15, 15, 19, 0.5); */
+    box-shadow: 0px 0px 10px 0px rgba(15, 15, 19, 0.5);
 }
 
 /* HEADER */
@@ -65,4 +65,19 @@
     font-size: 1rem;
     margin-top: 2px;
     margin-bottom: 2px;
+}
+
+#home {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+#canvas {
+    background-color: white;
+    padding: 100px;
+    box-shadow: 0px 0px 10px 0px rgba(15, 15, 19, 0.5), black 0px 0px 10px inset;;
+    border: 40px solid rgb(20, 20, 20);
 }
